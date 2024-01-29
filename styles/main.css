@@ -2,3 +2,24 @@
     border: 1px solid lightgrey;
     padding: 4px;
 }
+
+.selection_recettes{
+    .choices_recipes{
+        padding: 8px;
+        .recipe{
+            padding: 4px;
+            .minus, .plus{
+                color: lightgrey;
+            }
+            .portion{
+                font-weight: 600;
+            }
+            .select{
+                background-color: blue;
+            }
+            .delete_recipe{
+                color: red;
+            }
+        }
+    }
+}

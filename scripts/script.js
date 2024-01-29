@@ -4,6 +4,7 @@ function addRecipe(id){
 
     let new_recipes = document.createElement("div")
     new_recipes.id = `recipe_${id}`
+    new_recipes.classList = ["recipe"]
 
     let multiselect_recipes = ""
     // console.log(_.get(RECIPES, recipe, undefined))
@@ -13,14 +14,14 @@ function addRecipe(id){
         <option value="${RECIPES[recipe]["ID"]}">${Object.keys(RECIPES)[i]}</option>`       
     })
 
+    // <label for="recipe_name_${id}">Quelle recette ?</label><br></br>
     let div_content = `
     <span id="minus_${id}" class="minus">-</span>
-    1
+    <span id="portion_${id}" class="portion">1</span>
     <span id="plus_${id}" class="plus">+</span>
-    <label for="recipe_name_${id}">Quelle recette ?</label><br>
-        <select name="recipe_name_${id}" id="name_recipe_${id}">
-            ${multiselect_recipes}
-        </select>
+    <select name="recipe_name_${id}" id="name_recipe_${id}">
+        ${multiselect_recipes}
+    </select>
     <span id="cross_${id}" class="delete_recipe">x</span>
     `
     // <option value="espagne">Espagne</option>
