@@ -23,3 +23,10 @@
         }
     }
 }
+
+.shopping_list_container{
+    .shopping_list{
+        display: flex;
+        flex-direction: column;
+    }
+}

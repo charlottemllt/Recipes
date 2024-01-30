@@ -1,6 +1,6 @@
 const RECIPES = {
-    "Salade César":{
-        "ID": 1,
+    "1":{
+        "Name": "Salade César",
         "Nombre de personnes": 2,
         "Tags": ["Salade"],
         "Ingrédients": {
@@ -9,8 +9,8 @@ const RECIPES = {
         }
     },
 
-    "Bowl Poulet":{
-        "ID": 2,
+    "2":{
+        "Name": "Bowl Poulet",
         "Nombre de personnes": 2,
         "Tags": [],
         "Ingrédients": {
@@ -20,8 +20,8 @@ const RECIPES = {
         }
     },
 
-    "Cuisse de poulet et légumes rôtis au thym":{
-        "ID": 3,
+    "3":{
+        "Name": "Cuisse de poulet et légumes rôtis au thym",
         "Nombre de personnes": 2,
         "Tags": [],
         "Ingrédients": {
