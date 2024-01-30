@@ -95,12 +95,13 @@ function GenerateShoppingList(){
     let ingredients = {}
     selected_recipes.forEach( (recipe, i) => {
         let ingredients_to_add = RECIPES[recipe]["Ingrédients"]
+        let nb_people = RECIPES[recipe]["Nombre de personnes"]
         Object.keys(ingredients_to_add).forEach( (ing) => {
             if (!ingredients[ing]){
-                ingredients[ing] = portions[i] * ingredients_to_add[ing]
+                ingredients[ing] = portions[i] / nb_people * ingredients_to_add[ing]
             }
             else{
-                ingredients[ing] = ingredients[ing] + portions[i] * ingredients_to_add[ing]
+                ingredients[ing] = ingredients[ing] + portions[i] / nb_people * ingredients_to_add[ing]
             }
         })
     })
