@@ -36,6 +36,16 @@ function addRecipe(id){
     btnRemoveRecipe.addEventListener("click", () => {
         RemoveRecipe(div_id_to_remove)
     })
+
+    let portion_id = `portion_${id}`
+    let btnPlus = document.getElementById(`plus_${id}`)
+    btnPlus.addEventListener("click", () => {
+        increment(portion_id)
+    })
+    let btnMinus = document.getElementById(`minus_${id}`)
+    btnMinus.addEventListener("click", () => {
+        decrement(portion_id)
+    })
     id = id + 1
 
     return id
@@ -47,6 +57,20 @@ function RemoveRecipe(id_div){
     DivRecipe.remove();
 }
 
+function increment(span_id){
+    let span = document.getElementById(span_id)
+    let portion = parseInt(span.innerHTML)
+    span.innerHTML = portion + 1
+}
+
+function decrement(span_id){
+    let span = document.getElementById(span_id)
+    let portion = parseInt(span.innerHTML)
+    if (portion > 1){
+        span.innerHTML = portion - 1
+    }
+}
+
 function getSelectedRecipes(){
     let Divs = document.querySelectorAll(`.recipe select`)
     let id_recipes = []
@@ -56,30 +80,42 @@ function getSelectedRecipes(){
     return id_recipes
 }
 
+function getPortions(){
+    let spans = document.querySelectorAll(`.portion`)
+    let portions = []
+    spans.forEach( (span) => {
+        portions.push(parseInt(span.innerHTML))
+    })
+    return portions
+}
+
 function GenerateShoppingList(){
     let selected_recipes = getSelectedRecipes()
+    let portions = getPortions()
     let ingredients = {}
     selected_recipes.forEach( (recipe, i) => {
         let ingredients_to_add = RECIPES[recipe]["Ingrédients"]
         Object.keys(ingredients_to_add).forEach( (ing) => {
             if (!ingredients[ing]){
-                ingredients[ing] = ingredients_to_add[ing]
+                ingredients[ing] = portions[i] * ingredients_to_add[ing]
             }
             else{
-                ingredients[ing] = ingredients[ing] + ingredients_to_add[ing]
+                ingredients[ing] = ingredients[ing] + portions[i] * ingredients_to_add[ing]
             }
         })
     })
     let div = document.getElementById("shopping_list_container")
-    let shopping_list = document.createElement("div")
-    shopping_list.classList = ["shopping_list"]
     let div_content = ``
     Object.keys(ingredients).forEach( (ing) => {
+        let unite = INGREDIENTS[ing][0]
+        let ing_display = ing
+        if (ingredients[ing] > 1){
+            ing_display = INGREDIENTS[ing][3]
+        }
         div_content = `${div_content}
-        <span class="row_shopping_list">${ingredients[ing]} ${ing}</span>`
+        <span class="row_shopping_list">${ingredients[ing]} ${unite} ${ing_display}</span>`
     })
-    shopping_list.innerHTML = div_content
-    div.appendChild(shopping_list);
+    div.innerHTML = div_content
 }
 
 function main() {

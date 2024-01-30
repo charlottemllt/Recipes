@@ -29,7 +29,7 @@ const RECIPES = {
             "courgette": 1,
             "tomates cerises": 250,
             "cuisse de poulet": 2,
-            "thym séche": 2,
+            "thym séché": 2,
             "farfalle": 140,
             "copeaux de grana padano": 40,
             "huile d'olive": 1.5,
