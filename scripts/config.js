@@ -6,7 +6,8 @@ const RECIPES = {
         "Ingrédients": {
             "batavia": 40,
             "poulet": 200
-        }
+        },
+        "Temps": 20
     },
 
     "2":{
@@ -17,7 +18,8 @@ const RECIPES = {
             "avocat": 1,
             "mais": 100,
             "filet de poulet": 2
-        }
+        },
+        "Temps": 45
     },
 
     "3":{
@@ -34,7 +36,8 @@ const RECIPES = {
             "copeaux de grana padano": 40,
             "huile d'olive": 1.5,
             "beurre": 1
-        }
+        },
+        "Temps": 90
     }
 }
 

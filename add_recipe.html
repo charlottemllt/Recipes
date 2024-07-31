@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Générateur de listes de courses</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/add_recipe.css">
+
+    <!-- <script src="lodash.js" defer></script> -->
+    <script src="https://kit.fontawesome.com/c494bd0469.js" crossorigin="anonymous"></script>
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/script_add_recipe.js" defer></script>
+    <script src="scripts/add_recipe.js" defer></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1>RecetteBasket</h1>
+        <div class="buttons-pages">
+            <span id="shopping-list" class="button shopping-list">
+                <i class="fa-solid fa-basket-shopping"></i>
+                Courses
+            </span>
+            <a class="button book" href="livre_recettes.html">
+                <i class="fa-solid fa-book"></i>
+                Livre de recettes
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <a href="livre_recettes.html" class="back-button">< <i class="fa-solid fa-book"></i> Retour au livre de recettes</a>
+
+        <div class="recipes-informations">
+
+            <input placeholder="Ajouter le nom de la recette" class="input-name-recipe">
+            <div class="tags-selection">
+                <div class="vegetarian tag">
+                    <i class="fa-solid fa-seedling"></i>
+                    Végétarien
+                    <input type="checkbox">
+                </div>
+                <div class="salad tag">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    Salade
+                    <input type="checkbox">
+                </div> 
+                <div class="quick tag">
+                    <i class="fa-solid fa-stopwatch"></i>
+                    Rapide
+                    <input type="checkbox">
+                </div> 
+                <div class="oven tag">
+                    <i class="fa-solid fa-book"></i>
+                    Au four
+                    <input type="checkbox">
+                </div>  
+            </div>
+            <div class="add-image">
+                <span class="add-image-content">
+                    +
+                </span>
+            </div>
+            <div class="preparation_time form">
+                <span class="preparation_time-title title">
+                    Préparation :
+                </span>
+                <div class="preparation_time-content content">
+                    <input type="number" class="preparation_time-value value">
+                    <div class="preparation_time-text text">
+                        minutes
+                    </div>
+                </div>
+            </div>
+            <div class="number_people form">
+                <span class="number_people-title title">
+                    Nombre de personnes :
+                </span>
+                <div class="number_people-content content">
+                    <div class="number_people-text text">
+                        Pour
+                    </div>
+                    <input type="number" class="number_people-value value">
+                    <div class="number_people-text text">
+                        personne(s)
+                    </div>
+                </div>
+            </div>
+            <div class="ingredients form">
+                <span class="ingredients-title title">
+                    Ingrédients :
+                </span>
+                <div class="ingredients-content content">
+                    <input type="number" class="ingredients-value value">
+                    <input type="text" class="ingredients-name name">
+                    <span>
+                        -  +
+                    </span>
+                </div>
+            </div>
+            <div class="recipe form">
+                <div class="recipe-content content">
+                    <span class="recipe-title">
+                        Recette
+                    </span>
+                    <input type="text" placeholder="Ajouter la recette" class="recipe-text">
+                </div>
+            </div>
+        </div>
+        <div class="add-button">
+            Ajouter
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+    </footer>
+</body>
+</html>

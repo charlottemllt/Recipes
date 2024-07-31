@@ -16,18 +16,25 @@ function addRecipe(id){
 
     // <label for="recipe_name_${id}">Quelle recette ?</label><br></br>
     let div_content = `
-    <span id="minus_${id}" class="minus">-</span>
-    <span id="portion_${id}" class="portion">1</span>
-    <span id="plus_${id}" class="plus">+</span>
-    <select name="recipe_name_${id}" id="name_recipe_${id}">
+    <div id="number_portions_${id}" class="number_portions">
+        <span id="minus_${id}" class="minus btn">
+            -
+        </span>
+        <span id="portion_${id}" class="portion">
+            1
+        </span>
+        <span id="plus_${id}" class="plus btn">
+            +
+        </span>
+    </div>
+    <select name="recipe_name_${id}" id="name_recipe_${id}" class="btn">
         ${multiselect_recipes}
     </select>
-    <span id="cross_${id}" class="delete_recipe">x</span>
+    <span id="cross_${id}" class="delete_recipe">
+        x
+    </span>
     `
-    // <option value="espagne">Espagne</option>
-    // <option value="royaume-uni">Royaume-Uni</option>
-    // <option value="canada">Canada</option>
-    // <option value="japon">Japon</option>
+
     new_recipes.innerHTML = div_content
     myDiv.appendChild(new_recipes);
 
@@ -119,6 +126,13 @@ function GenerateShoppingList(){
     div.innerHTML = div_content
 }
 
+function ChangeDisplayMainPage(){
+    let recipesSelectionContainer = document.getElementById("selection_recettes")
+    let shoppingListContainer = document.getElementById("shopping_list")
+    recipesSelectionContainer.classList.toggle("not_selected")
+    shoppingListContainer.classList.toggle("not_selected")
+}
+
 function main() {
     id = 0
     // Add a first recipe for initialisation
@@ -129,8 +143,19 @@ function main() {
         id = addRecipe(id)
     })
 
-    let btnValidate = document.getElementById("validate_button")
-    btnValidate.addEventListener("click", () => {
+    // let btnValidate = document.getElementById("validate_button")
+    // btnValidate.addEventListener("click", () => {
+    //     GenerateShoppingList()
+    // })
+
+    // Display either the selection of recipes or the shopping list
+    let btnDisplayRecipe = document.getElementById("nav_recipes")
+    btnDisplayRecipe.addEventListener("click", () => {
+        ChangeDisplayMainPage()
+    })
+    let btnDisplayShoppingList = document.getElementById("nav_shopping_list")
+    btnDisplayShoppingList.addEventListener("click", () => {
         GenerateShoppingList()
+        ChangeDisplayMainPage()
     })
 }

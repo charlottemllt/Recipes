@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/main.css">
 
     <!-- <script src="lodash.js" defer></script> -->
+    <script src="https://kit.fontawesome.com/c494bd0469.js" crossorigin="anonymous"></script>
     <script src="scripts/config.js" defer></script>
     <script src="scripts/script.js" defer></script>
     <script src="scripts/main.js" defer></script>
@@ -15,27 +16,41 @@
 <body>
     <!-- HEADER -->
     <header>
-        <h1>Générateur de liste de courses</h1>
-        <a href="livre_recettes.html">Accéder au livre de recettes</a>
+        <h1>RecetteBasket</h1>
+        <div class="buttons-pages">
+            <span id="shopping-list" class="button shopping-list">
+                <i class="fa-solid fa-basket-shopping"></i>
+                Courses
+            </span>
+            <a class="button book" href="livre_recettes.html">
+                <i class="fa-solid fa-book"></i>
+                Livre de recettes
+            </a>
+        </div>
     </header>
 
     <!-- MAIN -->
     <main>
-        <div class="selection_recettes">
-            <span id="add_recettes" class="btn add_recettes">
-                Ajouter une recette
-            </span>
-            <span id="reset" class="btn reset">
-                Reset
-            </span>
+        <nav>
+            <div id="nav_recipes" class="nav-item recipes">Mes Recettes</div>
+            <div id="nav_shopping_list" class="nav-item shopping-list">Ma liste de courses</div>
+        </nav>
+        <div id="selection_recettes" class="selection_recettes">
             <div id="choices_recipes" class="choices_recipes">
             </div>
-            <span id="validate_button" class="btn validate">
-                Générer ma liste de courses
-            </span>
+            <div class="buttons">
+                <span id="add_recettes" class="btn add_recipe">
+                    Ajouter une recette
+                </span>
+                <!-- <span id="reset" class="btn reset">
+                    Reset
+                </span> -->
+                <!-- <span id="validate_button" class="btn validate">
+                    Générer ma liste de courses
+                </span> -->
+            </div>
         </div>
-        <div id="shopping_list" class="shopping_list">
-            <h2>Listes de courses</h2>
+        <div id="shopping_list" class="shopping_list not_selected">
             <div id="shopping_list_container" class="shopping_list_container">
             </div>
         </div>

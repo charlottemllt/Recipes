@@ -6,21 +6,37 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Livre de recettes</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/livre.css">
 
-    <!-- <script src="scripts/config.js" defer></script>
-    <script src="scripts/script.js" defer></script> -->
-    <script src="scripts/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/c494bd0469.js" crossorigin="anonymous"></script>
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/script_book.js" defer></script>
+    <script src="scripts/recipes_book.js" defer></script>
 </head>
 <body>
     <!-- HEADER -->
     <header>
-        <a href="index.html">< Retour</a>
-        <h1>Livre de recettes</h1>
+        <h1>RecetteBasket</h1>
+        <div class="buttons-pages">
+            <a href="index.html" id="shopping-list" class="button shopping-list">
+                <i class="fa-solid fa-basket-shopping"></i>
+                Courses
+            </a>
+            <a class="button book" href="livre_recettes.html">
+                <i class="fa-solid fa-book"></i>
+                Livre de recettes
+            </a>
+        </div>
     </header>
 
     <!-- MAIN -->
     <main>
-        
+        <div id="recipes_container" class="recipes_container">
+
+        </div>
+        <div id="recipe_details" class="recipe_details hidden">
+
+        </div>
     </main>
 
     <!-- FOOTER -->

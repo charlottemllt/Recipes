@@ -1,32 +1,195 @@
-.btn {
-    border: 1px solid lightgrey;
-    padding: 4px;
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
 
-.selection_recettes{
-    .choices_recipes{
-        padding: 8px;
-        .recipe{
-            padding: 4px;
-            .minus, .plus{
-                color: lightgrey;
+html{
+    height: 100%;
+    width: 100%;
+
+    body{
+        --color1: #084B83;
+        --color2: #BBE6E4;
+
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        overflow: none;
+
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            background: var(--color1);
+            color: var(--color2);
+            font-size: 16px;
+            h1, .buttons-pages{
+                padding: 16px;
             }
-            .portion{
-                font-weight: 600;
-            }
-            .select{
-                background-color: blue;
-            }
-            .delete_recipe{
-                color: red;
+            .buttons-pages{
+                display: flex;
+                align-items: center;
+                height: 100%;
+                .button{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 8px;
+                    color: var(--color2);
+                    gap: 8px;
+                    i{
+                        transform: scale(1.4);
+                    }
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                    &:not(:hover){
+                        text-decoration: none;
+                    }
+                }
             }
         }
-    }
-}
 
-.shopping_list_container{
-    /* .shopping_list{ */
-    display: flex;
-    flex-direction: column;
-    /* } */
+        main{
+            display: flex;
+            flex-direction: column;
+            /* flex-grow: 1; */
+            height: calc(100% - 100px);
+            nav{
+                width: 100%;
+                height: 100px;
+                display: flex;
+                flex-direction: row;;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                .nav-item{
+                    padding: 8px;
+                    font-weight: 800;
+                    font-size: 20px;
+                    color: var(--color1);
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        
+            .btn {
+                background-color: var(--color2);
+                color: var(--color1);
+                border-radius: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+            }
+        
+            .not_selected{
+                display: none;
+                height: 0;
+            }
+        
+            .selection_recettes{
+                &.not_selected{
+                    display: none;
+                    height: 0;
+                }
+                
+                display: flex;
+                flex-direction: column;
+                height: calc(100% - 100px);
+                /* flex-grow: 1; */
+                .choices_recipes{
+                    display: flex;
+                    flex-direction: column;
+                    /* flex-grow: 1; */
+                    height: calc(100% - 100px);
+                    justify-content: flex-start;
+                    align-items: center;
+                    overflow: overlay;
+                    /* gap: 8px; */
+                    .recipe{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 60px;
+                        gap: 60px;
+                        .number_portions{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 60%;
+                            font-size: 16px;
+                            .portion{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 40px;
+                                height: 40px;
+                                color: var(--color1);
+                            }
+                            .minus, .plus{
+                                color: var(--color1);
+                                width: 40px;
+                                &:hover{
+                                    font-weight: 1000;
+                                }
+                            }
+                            .portion{
+                                font-weight: 600;
+                            }
+                        }
+                        select{
+                            height: 60%;
+                            max-width: 400px;
+                            text-overflow: ellipsis;
+                            border: none;
+                            color: var(--color1);
+                            padding-left: 8px;
+                        }
+                        .delete_recipe{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 36px;
+                            font-weight: 800;
+                            font-size: 24px;
+                            color: var(--color1);
+                        }
+                    }
+                }
+                .buttons{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100px;
+                    gap: 80px;
+                    .add_recipe, .validate{
+                        width: 200px;
+                    }
+                }
+            }
+        
+            .shopping_list_container{
+                /* .shopping_list{ */
+                display: flex;
+                flex-direction: column;
+                /* } */
+            }
+        }
+
+        footer{
+            height: 0;
+        }
+    }
 }
